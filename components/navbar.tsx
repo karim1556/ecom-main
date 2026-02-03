@@ -338,7 +338,7 @@ export function Navbar() {
 
             {/* User Menu - Hidden on mobile, visible on tablet and up */}
             <div className="hidden md:block">
-              {!loading && (
+              {isMounted ? (
                 <>
                   {user ? (
                     <DropdownMenu>
@@ -391,7 +391,7 @@ export function Navbar() {
                     </Link>
                   )}
                 </>
-              )}
+              ) : null}
             </div>
 
             {isMounted && (
@@ -479,7 +479,7 @@ export function Navbar() {
                       {/* Mobile User Section */}
                       <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t mx-2 sm:mx-3">
                         <p className="text-xs sm:text-sm text-muted-foreground px-3 sm:px-4 mb-2">Account</p>
-                        {!loading && (
+                        {isMounted ? (
                           <>
                             {user ? (
                               <div className="flex flex-col gap-1">
@@ -542,7 +542,7 @@ export function Navbar() {
                               </Link>
                             )}
                           </>
-                        )}
+                        ) : null}
                       </div>
                     </div>
                   </div>
